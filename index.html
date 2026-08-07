@@ -175,12 +175,13 @@
       .callout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 22px; align-items: center; padding: 30px; border: 1px solid var(--cp-link); border-radius: 16px; background: var(--cp-accent-soft); }
       .callout h2 { margin: 0 0 8px; font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1; letter-spacing: -0.06em; }
       .callout p { margin: 0; color: var(--cp-text-muted); } .callout-action { justify-self: end; text-align: right; }
+      .callout-buttons { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
       .callout-action small { display: block; margin-top: 8px; color: var(--cp-text-muted); }
       footer { padding: 28px 0; border-top: 1px solid var(--cp-border); color: var(--cp-text-muted); font-size: 0.85rem; }
       .footer-inner { display: flex; justify-content: space-between; gap: 18px; } .footer-inner strong { color: var(--cp-text); }
       @media (max-width: 800px) {
         .hero { grid-template-columns: 1fr; gap: 10px; padding-top: 30px; } .hero-art { min-height: 300px; max-width: 530px; width: 100%; margin: 0 auto; }
-        .session-grid, .agenda-strip { grid-template-columns: 1fr; } .callout { grid-template-columns: 1fr; } .callout-action { justify-self: start; text-align: left; }
+        .session-grid, .agenda-strip { grid-template-columns: 1fr; } .callout { grid-template-columns: 1fr; } .callout-action { justify-self: start; text-align: left; } .callout-buttons { justify-content: flex-start; }
       }
       @media (max-width: 560px) {
         .shell { width: min(100% - 28px, 1160px); } .topline-inner, .nav, .section-heading, .footer-inner { align-items: flex-start; flex-direction: column; }
@@ -259,7 +260,7 @@
         <div class="shell">
           <div class="callout">
             <div><div class="eyebrow">Bring your questions</div><h2>Share your wins.<br />Listen. Learn. Level up.</h2><p>The Guild is better with more voices. Bring a tricky prompt, a clever workflow, or a story from the field.</p></div>
-            <div class="callout-action"><a class="primary-button" href="https://teams.microsoft.com/meet/226983371980772?p=GbySF1cXcbKJGVYHkW" target="_blank" rel="noreferrer">Join the conversation →</a><small>Meetups every 2nd Tuesday, 2:30pm EST</small></div>
+            <div class="callout-action"><div class="callout-buttons"><a class="primary-button" href="https://teams.microsoft.com/meet/226983371980772?p=GbySF1cXcbKJGVYHkW" target="_blank" rel="noreferrer">Join the conversation →</a><a class="ghost-button" href="assets/oh-build-guild-monthly-series.ics" download="OH-Build-Guild-Monthly-Series.ics">Add to calendar ↓</a></div><small>Meetups every 2nd Tuesday, 2:30pm EST</small></div>
           </div>
         </div>
       </section>
