@@ -141,23 +141,9 @@
       .hero-copy { max-width: 550px; color: var(--cp-text-muted); font-size: 1.15rem; }
       .hero-copy strong { color: var(--cp-text); }
       .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-      .hero-art { position: relative; min-height: 340px; }
-      .bot-card {
-        position: absolute; inset: 20px 8px 0 28px; display: grid; place-items: center; min-height: 325px;
-        border: 1px solid var(--cp-border-strong); border-radius: 16px; background: var(--cp-panel); box-shadow: var(--cp-shadow); transform: rotate(3deg);
-      }
-      .bot-card::before { content: ""; position: absolute; inset: 18px; border: 1px dashed var(--cp-link); border-radius: 10px; opacity: 0.55; }
-      .bot { position: relative; width: 210px; height: 190px; border: 3px solid var(--cp-link); border-radius: 42% 42% 30% 30%; background: var(--cp-surface); box-shadow: 0 0 0 12px var(--cp-accent-soft); }
-      .bot::before, .bot::after { content: ""; position: absolute; top: 58px; width: 32px; height: 44px; border-radius: 12px; background: var(--cp-link); }
-      .bot::before { left: 43px; } .bot::after { right: 43px; }
-      .bot-face { position: absolute; left: 89px; top: 72px; width: 32px; height: 18px; border-radius: 10px; background: var(--cp-text); }
-      .bot-ear { position: absolute; top: 72px; width: 25px; height: 48px; border: 2px solid var(--cp-link); border-radius: 12px; }
-      .bot-ear.left { left: -30px; } .bot-ear.right { right: -30px; }
-      .bot-antenna { position: absolute; width: 4px; height: 28px; left: 103px; top: -30px; background: var(--cp-link); }
-      .bot-antenna::after { content: ""; position: absolute; left: -6px; top: -9px; width: 15px; height: 15px; border-radius: 50%; background: var(--cp-link); }
-      .code-bubble { position: absolute; right: 4px; top: 2px; padding: 12px 14px; border: 1px solid var(--cp-link); border-radius: 10px; background: var(--cp-surface); color: var(--cp-link); font-family: Consolas, "Courier New", Courier, monospace; font-size: 0.8rem; transform: rotate(-5deg); }
-      .code-bubble::after { content: ""; position: absolute; left: 18px; bottom: -8px; width: 14px; height: 14px; border-right: 1px solid var(--cp-link); border-bottom: 1px solid var(--cp-link); background: var(--cp-surface); transform: rotate(45deg); }
-      .sticker { position: absolute; left: 0; bottom: 14px; padding: 10px 14px; border-radius: 10px; background: var(--cp-link); color: var(--cp-accent-fg); font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; transform: rotate(-7deg); }
+      .hero-art { position: relative; min-height: 420px; display: grid; place-items: center; }
+      .flyer-frame { width: min(100%, 390px); padding: 10px; border: 1px solid var(--cp-link); border-radius: 16px; background: var(--cp-panel); box-shadow: var(--cp-shadow); transform: rotate(2deg); }
+      .flyer-frame img { display: block; width: 100%; height: auto; border-radius: 10px; }
 
       .section { padding: 78px 0; }
       .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
@@ -233,9 +219,7 @@
             </div>
           </div>
           <div class="hero-art" aria-label="Illustration of a friendly coding assistant">
-            <div class="code-bubble">// build better<br />// share knowledge<br />// solve together</div>
-            <div class="bot-card"><div class="bot"><span class="bot-antenna"></span><span class="bot-ear left"></span><span class="bot-ear right"></span><span class="bot-face"></span></div></div>
-            <div class="sticker">Community of practice</div>
+            <div class="flyer-frame"><img src="assets/build-guild-flyer.png" alt="GitHub Copilot Build Guild flyer announcing Token Optimization as the first session topic" /></div>
           </div>
         </div>
       </div>
