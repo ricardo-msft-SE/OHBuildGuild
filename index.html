@@ -141,6 +141,14 @@
       .hero-copy { max-width: 550px; color: var(--cp-text-muted); font-size: 1.15rem; }
       .hero-copy strong { color: var(--cp-text); }
       .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+      .speaker-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 28px; }
+      .speaker { display: grid; grid-template-columns: 42px minmax(0, 1fr); align-items: center; gap: 9px; min-width: 150px; }
+      .speaker-avatar {
+        display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--cp-link);
+        border-radius: 50%; background: var(--cp-accent-soft); color: var(--cp-link); font-size: 0.78rem; font-weight: 800;
+      }
+      .speaker-name { display: block; color: var(--cp-text); font-size: 0.82rem; font-weight: 800; line-height: 1.15; }
+      .speaker-title { display: block; margin-top: 3px; color: var(--cp-text-muted); font-size: 0.68rem; line-height: 1.2; }
       .hero-art { position: relative; min-height: 420px; display: grid; place-items: center; }
       .flyer-frame { width: min(100%, 390px); padding: 10px; border: 1px solid var(--cp-link); border-radius: 16px; background: var(--cp-panel); box-shadow: var(--cp-shadow); transform: rotate(2deg); }
       .flyer-frame img { display: block; width: 100%; height: auto; border-radius: 10px; }
@@ -217,6 +225,20 @@
             <div class="hero-actions">
               <a class="primary-button" href="#sessions">Explore sessions →</a>
               <a class="ghost-button" href="https://github.com/" target="_blank" rel="noreferrer">Open on GitHub</a>
+            </div>
+            <div class="speaker-row" aria-label="OH Build Guild speakers">
+              <div class="speaker">
+                <span class="speaker-avatar" aria-hidden="true">KT</span>
+                <span><span class="speaker-name">Kenedy Thorne</span><span class="speaker-title">Senior Solution Engineer</span></span>
+              </div>
+              <div class="speaker">
+                <span class="speaker-avatar" aria-hidden="true">RW</span>
+                <span><span class="speaker-name">Ricardo Wilkins</span><span class="speaker-title">Senior Solution Engineer</span></span>
+              </div>
+              <div class="speaker">
+                <span class="speaker-avatar" aria-hidden="true">AB</span>
+                <span><span class="speaker-name">August Banks</span><span class="speaker-title">Senior Cloud Solution Architect</span></span>
+              </div>
             </div>
           </div>
           <div class="hero-art" aria-label="Illustration of a friendly coding assistant">
