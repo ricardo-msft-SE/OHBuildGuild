@@ -154,7 +154,7 @@
       .microsoft-mark { display: grid; grid-template-columns: repeat(2, 4px); gap: 1px; width: 9px; height: 9px; }
       .microsoft-mark i { display: block; width: 4px; height: 4px; background: var(--cp-link); }
       .hero-art { position: relative; min-height: 420px; display: grid; place-items: center; }
-      .flyer-frame { width: min(100%, 390px); padding: 10px; border: 1px solid var(--cp-link); border-radius: 16px; background: var(--cp-panel); box-shadow: var(--cp-shadow); transform: rotate(2deg); }
+      .flyer-frame { width: min(100%, 390px); padding: 10px; border: 1px solid var(--cp-link); border-radius: 16px; background: var(--cp-panel); box-shadow: var(--cp-shadow); transform: rotate(2deg); backdrop-filter: blur(8px); }
       .flyer-frame img { display: block; width: 100%; height: auto; border-radius: 10px; }
 
       .section { padding: 78px 0; }
@@ -179,12 +179,12 @@
       .tag { padding: 5px 8px; border-radius: 999px; background: var(--cp-accent-soft); color: var(--cp-link); font-size: 0.68rem; font-weight: 800; text-transform: uppercase; }
       .session-content { flex: 1; padding: 18px; } .session-content h3 { margin: 0 0 8px; font-size: 1.35rem; letter-spacing: -0.035em; }
       .session-content p { margin: 0; color: var(--cp-text-muted); font-size: 0.92rem; }
-      .session-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-top: 1px solid var(--cp-border); color: var(--cp-text-muted); font-size: 0.8rem; }
+      .session-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-top: 1px solid var(--cp-border); color: var(--cp-text-muted); font-size: 0.85rem; }
       .session-footer a { color: var(--cp-link); font-weight: 700; }
       .empty { display: none; padding: 30px; border: 1px dashed var(--cp-border-strong); border-radius: 16px; color: var(--cp-text-muted); text-align: center; }
       .empty.show { display: block; }
 
-      .callout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 22px; align-items: center; padding: 30px; border: 1px solid var(--cp-link); border-radius: 16px; background: var(--cp-accent-soft); }
+      .callout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 22px; align-items: center; padding: 30px; border: 1px solid var(--cp-link); border-radius: 16px; background: var(--cp-accent-soft); margin-bottom: 46px; }
       .callout h2 { margin: 0 0 8px; font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1; letter-spacing: -0.06em; }
       .callout p { margin: 0; color: var(--cp-text-muted); } .callout-action { justify-self: end; text-align: right; }
       .callout-buttons { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
@@ -256,8 +256,8 @@
       <section class="section" id="sessions">
         <div class="shell">
           <div class="callout" id="about">
-            <div><div class="eyebrow">Bring your questions</div><h2>Share your wins.<br />Listen. Learn. Level up.</h2><p>The Guild is better with more voices. Bring a tricky prompt, a clever workflow, or a story from the field.</p></div>
-            <div class="callout-action"><div class="callout-buttons"><a class="primary-button" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_NjgxZmJkZWUtOTc1My00NmFmLWEwMDAtNzNlZGNmNTdjZDEx%40thread.v2/0?context=%7b%22Tid%22%3a%2250f8fcc4-94d8-4f07-84eb-36ed57c7c8a2%22%2c%22Oid%22%3a%229761cbe8-9381-42af-8c94-21dadb166654%22%7d" target="_blank" rel="noreferrer">Join the conversation →</a><a class="ghost-button" href="assets/oh-build-guild-monthly-series.ics" download="OH-Build-Guild-Monthly-Series.ics">Add to calendar ↓</a></div><small>Meetups every 2nd Tuesday, 2:30pm EST</small></div>
+            <div><div class="eyebrow">Bring your questions</div><h2>Share your wins.<br />Listen. Learn. Level up.</h2><p>The Guild is better with more voices. Bring a tricky prompt, a clever workflow, or a "how would you solve this?" moment.</p></div>
+            <div class="callout-action"><div class="callout-buttons"><a class="primary-button" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_NjgxZmJkZWUtOTc1My00NmFmLWEwMDAtNzNlZGNjYzc0OWI0%40thread.v2/0?context=%7b%22Tid%22%3a%2272f988bf-86f1-41af-91ab-2d7cd011db47%22%2c%22Oid%22%3a%22fbf67f7a-760f-4f5e-9f23-6626f8a5c25c%22%7d" target="_blank" rel="noreferrer">Join Teams ↗</a><a class="ghost-button" href="mailto:se-community@github.com">Invite a teammate</a></div><small>Everyone is welcome — devs, architects, and curious builders.</small></div>
           </div>
           <div class="section-heading">
             <div><div class="eyebrow">The first session</div><h2>Sessions & notes</h2></div>
@@ -273,18 +273,18 @@
           <div class="session-grid" id="session-grid">
             <article class="session-card" data-type="deep-dive" data-search="token optimization quality cost agents">
               <div class="session-top"><div class="date-block">August 2026<b>11</b></div><span class="tag">First session</span></div>
-              <div class="session-content"><h3>Token optimization</h3><p>Improve agent quality while reducing unnecessary token usage and cost. Context, prompts, model choice, and testing patterns.</p></div>
-              <div class="session-footer"><span>45 min · Notes</span><span><a href="assets/agent-quality-token-optimization.pdf" download="Agent-Quality-and-Token-Optimization.pdf">Session deck ↓</a> · <a href="#" class="notes-link">Read notes ↗</a></span></div>
+              <div class="session-content"><h3>Token optimization</h3><p>Improve agent quality while reducing unnecessary token usage and cost. Context, prompts, model choice, and testing patterns you can apply right away.</p></div>
+              <div class="session-footer"><span>45 min · Notes</span><span><a href="assets/agent-quality-token-optimization.pdf" download="Agent-Quality-and-Token-Optimization.pdf">Session deck ⬇</a></span></div>
             </article>
             <article class="session-card" data-type="workshop" data-search="github copilot token optimization developer tools livestream english">
               <div class="session-top"><div class="date-block">June 2026<b>22</b></div><span class="tag">Workshop</span></div>
-              <div class="session-content"><h3>GitHub Copilot Token Optimization Deep Dive</h3><p>Explore practical techniques for improving GitHub Copilot workflows while reducing unnecessary token usage. Livestream · Developer Tools · English.</p></div>
+              <div class="session-content"><h3>GitHub Copilot Token Optimization Deep Dive</h3><p>Explore practical techniques for improving GitHub Copilot workflows while reducing unnecessary token usage. Includes model selection, prompt design, and live demos.</p></div>
               <div class="session-footer"><span>12:00–1:00 PM ET</span><a href="https://developer.microsoft.com/en-us/reactor/events/27334/" target="_blank" rel="noreferrer">View event ↗</a></div>
             </article>
             <article class="session-card" data-type="showcase" data-search="spend smarter optimizing copilot tokens without slowing builders github demo days">
               <div class="session-top"><div class="date-block">October 2026<b>7</b></div><span class="tag">Demo</span></div>
-              <div class="session-content"><h3>Spend Smarter: Optimizing Copilot Tokens Without Slowing Builders</h3><p>Learn how to reduce token waste, match the right model to each task, and set smart guardrails that keep AI usage valuable and efficient.</p></div>
-              <div class="session-footer"><span>12:00–12:45 PM EDT</span><a href="https://github.registration.goldcast.io/webinar/319dc29a-5c6d-4b09-afc3-22da968edbfb" target="_blank" rel="noreferrer">Register ↗</a></div>
+              <div class="session-content"><h3>Spend Smarter: Optimizing Copilot Tokens Without Slowing Builders</h3><p>Learn how to reduce token waste, match the right model to each task, and set practical limits that protect budget without hurting delivery speed.</p></div>
+              <div class="session-footer"><span>12:00–12:45 PM EDT</span><a href="https://github.registration.goldcast.io/webinar/319dc29a-5c6d-4b09-afc3-22da968edfbb" target="_blank" rel="noreferrer">Register ↗</a></div>
             </article>
           </div>
           <div class="empty" id="empty-state">No sessions match that search. Try another topic or choose “All sessions.”</div>
