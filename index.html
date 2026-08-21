@@ -42,6 +42,10 @@
         --cp-panel-strong: rgba(255, 255, 255, 0.96);
         --cp-sheen: rgba(255, 255, 255, 0.55);
         --cp-highlight: rgba(177, 31, 75, 0.12);
+        --cp-guild: #0f6cbd;
+        --cp-guild-soft: rgba(15, 108, 189, 0.1);
+        --cp-external: #6b3fa0;
+        --cp-external-soft: rgba(107, 63, 160, 0.1);
       }
       html[data-theme="dark"] {
         color-scheme: dark;
@@ -68,6 +72,10 @@
         --cp-panel-strong: rgba(41, 41, 41, 0.96);
         --cp-sheen: rgba(255, 255, 255, 0.04);
         --cp-highlight: rgba(253, 142, 161, 0.12);
+        --cp-guild: #6cb8ff;
+        --cp-guild-soft: rgba(108, 184, 255, 0.16);
+        --cp-external: #d3b0ff;
+        --cp-external-soft: rgba(211, 176, 255, 0.16);
       }
 
       * { box-sizing: border-box; }
@@ -184,6 +192,21 @@
       .empty { display: none; padding: 30px; border: 1px dashed var(--cp-border-strong); border-radius: 16px; color: var(--cp-text-muted); text-align: center; }
       .empty.show { display: block; }
 
+      .legend { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 0 0 18px; padding: 0; list-style: none; color: var(--cp-text-muted); font-size: 0.84rem; }
+      .legend li { display: flex; align-items: center; gap: 8px; }
+      .origin-dot { flex: 0 0 auto; width: 10px; height: 10px; border-radius: 3px; background: var(--cp-guild); }
+      [data-origin="external"] .origin-dot { background: var(--cp-external); }
+      .legend b { color: var(--cp-text); }
+
+      .session-card[data-origin] { border-left: 4px solid var(--cp-guild); }
+      .session-card[data-origin="external"] { border-left-color: var(--cp-external); background: var(--cp-bg-elevated); }
+      .card-origin {
+        display: flex; align-items: center; gap: 8px; margin: 0; padding: 9px 18px;
+        border-bottom: 1px solid var(--cp-border); background: var(--cp-guild-soft); color: var(--cp-guild);
+        font-size: 0.68rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
+      }
+      .session-card[data-origin="external"] .card-origin { background: var(--cp-external-soft); color: var(--cp-external); }
+
       .callout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 22px; align-items: center; padding: 30px; border: 1px solid var(--cp-link); border-radius: 16px; background: var(--cp-accent-soft); margin-bottom: 46px; }
       .callout h2 { margin: 0 0 8px; font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1; letter-spacing: -0.06em; }
       .callout p { margin: 0; color: var(--cp-text-muted); } .callout-action { justify-self: end; text-align: right; }
@@ -263,30 +286,40 @@
             <div><div class="eyebrow">The session series</div><h2>Sessions & notes</h2></div>
             <p>Catch up on the conversations, resources, and experiments from our monthly series.</p>
           </div>
+          <ul class="legend" aria-label="What the session card colors mean">
+            <li data-origin="guild"><span class="origin-dot" aria-hidden="true"></span><span><b>OH Build Guild session</b> — hosted by the Guild</span></li>
+            <li data-origin="external"><span class="origin-dot" aria-hidden="true"></span><span><b>External event</b> — workshops, demos, and webinars hosted elsewhere</span></li>
+          </ul>
           <div class="filters" role="toolbar" aria-label="Filter sessions">
             <button class="filter active" type="button" data-filter="all">All sessions</button>
+            <button class="filter" type="button" data-filter="guild">Guild sessions</button>
+            <button class="filter" type="button" data-filter="external">External events</button>
             <button class="filter" type="button" data-filter="deep-dive">Deep dives</button>
             <button class="filter" type="button" data-filter="showcase">Showcases</button>
             <button class="filter" type="button" data-filter="workshop">Workshops</button>
             <input class="search" id="session-search" type="search" placeholder="Search sessions…" aria-label="Search sessions" />
           </div>
           <div class="session-grid" id="session-grid">
-            <article class="session-card" data-type="deep-dive" data-search="token optimization quality cost agents">
+            <article class="session-card" data-origin="guild" data-type="deep-dive" data-search="oh build guild session token optimization quality cost agents">
+              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>OH Build Guild session</p>
               <div class="session-top"><div class="date-block">August 2026<b>11</b></div><span class="tag">First session</span></div>
               <div class="session-content"><h3>Token optimization</h3><p>Improve agent quality while reducing unnecessary token usage and cost. Context, prompts, model choice, and testing patterns you can apply right away.</p></div>
               <div class="session-footer"><span>45 min · Notes</span><span><a href="assets/agent-quality-token-optimization.pdf" download="Agent-Quality-and-Token-Optimization.pdf">Session deck ⬇</a></span></div>
             </article>
-            <article class="session-card" data-type="workshop" data-search="github copilot token optimization developer tools livestream english">
+            <article class="session-card" data-origin="external" data-type="workshop" data-search="external event github copilot token optimization developer tools livestream english">
+              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>External event · Microsoft Reactor</p>
               <div class="session-top"><div class="date-block">June 2026<b>22</b></div><span class="tag">Workshop</span></div>
               <div class="session-content"><h3>GitHub Copilot Token Optimization Deep Dive</h3><p>Explore practical techniques for improving GitHub Copilot workflows while reducing unnecessary token usage. Includes model selection, prompt design, and live demos.</p></div>
               <div class="session-footer"><span>12:00–1:00 PM ET</span><a href="https://developer.microsoft.com/en-us/reactor/events/27334/" target="_blank" rel="noreferrer">View event ↗</a></div>
             </article>
-            <article class="session-card" data-type="deep-dive" data-search="upcoming september discussion topic coming soon tbd next session">
+            <article class="session-card" data-origin="guild" data-type="deep-dive" data-search="oh build guild session upcoming september discussion topic coming soon tbd next session">
+              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>OH Build Guild session</p>
               <div class="session-top"><div class="date-block">September 2026<b>8</b></div><span class="tag">Upcoming</span></div>
               <div class="session-content"><h3>Discussion topic coming soon</h3><p>Our next Guild session is on the calendar for the second Tuesday of September. The discussion topic will be announced soon — bring your questions in the meantime.</p></div>
               <div class="session-footer"><span>Topic TBD</span><span>Details coming soon</span></div>
             </article>
-            <article class="session-card" data-type="showcase" data-search="spend smarter optimizing copilot tokens without slowing builders github demo days">
+            <article class="session-card" data-origin="external" data-type="showcase" data-search="external event spend smarter optimizing copilot tokens without slowing builders github demo days">
+              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>External event · GitHub Demo Days</p>
               <div class="session-top"><div class="date-block">October 2026<b>7</b></div><span class="tag">Demo</span></div>
               <div class="session-content"><h3>Spend Smarter: Optimizing Copilot Tokens Without Slowing Builders</h3><p>Learn how to reduce token waste, match the right model to each task, and set practical limits that protect budget without hurting delivery speed.</p></div>
               <div class="session-footer"><span>12:00–12:45 PM EDT</span><a href="https://github.registration.goldcast.io/webinar/319dc29a-5c6d-4b09-afc3-22da968edfbb" target="_blank" rel="noreferrer">Register ↗</a></div>
@@ -310,7 +343,10 @@
         const term = search.value.trim().toLowerCase();
         let visible = 0;
         cards.forEach((card) => {
-          const matchesFilter = activeFilter === "all" || card.dataset.type === activeFilter;
+          const matchesFilter =
+            activeFilter === "all" ||
+            card.dataset.type === activeFilter ||
+            card.dataset.origin === activeFilter;
           const matchesSearch = !term || card.dataset.search.includes(term);
           const show = matchesFilter && matchesSearch;
           card.hidden = !show;
