@@ -191,6 +191,12 @@
       .session-footer a { color: var(--cp-link); font-weight: 700; }
       .empty { display: none; padding: 30px; border: 1px dashed var(--cp-border-strong); border-radius: 16px; color: var(--cp-text-muted); text-align: center; }
       .empty.show { display: block; }
+      .notes-panel { margin-top: 24px; padding: 24px; border: 1px solid var(--cp-border); border-radius: 16px; background: var(--cp-surface); }
+      .notes-panel h3 { margin: 0 0 18px; font-size: 1.5rem; letter-spacing: -0.04em; }
+      .notes-panel h4 { margin: 20px 0 8px; color: var(--cp-link); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
+      .notes-panel ul { margin: 0; padding-left: 22px; color: var(--cp-text-muted); }
+      .notes-panel li + li { margin-top: 10px; }
+      .notes-panel strong { color: var(--cp-text); }
 
       .legend { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 0 0 18px; padding: 0; list-style: none; color: var(--cp-text-muted); font-size: 0.84rem; }
       .legend li { display: flex; align-items: center; gap: 8px; }
@@ -312,11 +318,11 @@
               <div class="session-content"><h3>GitHub Copilot Token Optimization Deep Dive</h3><p>Explore practical techniques for improving GitHub Copilot workflows while reducing unnecessary token usage. Includes model selection, prompt design, and live demos.</p></div>
               <div class="session-footer"><span>12:00–1:00 PM ET</span><a href="https://developer.microsoft.com/en-us/reactor/events/27334/" target="_blank" rel="noreferrer">View event ↗</a></div>
             </article>
-            <article class="session-card" data-origin="guild" data-type="deep-dive" data-date="2026-09-08T12:00" data-search="oh build guild session upcoming september deep dive token optimization questions audience challenges next session">
+            <article class="session-card" data-origin="guild" data-type="deep-dive" data-date="2026-09-08T12:00" data-search="oh build guild session september deep dive token optimization questions audience challenges next session meeting notes recording">
               <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>OH Build Guild session</p>
-              <div class="session-top"><div class="date-block">September 2026<b>8</b></div><span class="tag">Upcoming</span></div>
+              <div class="session-top"><div class="date-block">September 2026<b>8</b></div><span class="tag">Session notes</span></div>
               <div class="session-content"><h3>Deep Dive: Token Optimization</h3><p>We'll continue to dive into the topics from last month, and take specific questions from the audience on any challenges people may be facing.</p></div>
-              <div class="session-footer"><span>45 min · Q&amp;A</span><span>Details coming soon</span></div>
+              <div class="session-footer"><span>45 min · Q&amp;A</span><span><a href="#september-8-notes">Meeting notes ↘</a> · <a href="https://ohiodas.sharepoint.com/:v:/s/OITCloudTeam/IQAFQTeE4hROTolhitKnPoTqAa9nHVsxrOmOMoGUXA2kEXE?e=Kulsw4&amp;xsdata=MDV8MDJ8cmljYXJkby53aWxraW5zQG1pY3Jvc29mdC5jb218ZDU5MmNiMTA1MGE1NGYxMzBjZjYwOGRmMGU2ZDU2MWZ8NzJmOTg4YmY4NmYxNDFhZjkxYWIyZDdjZDAxMWRiNDd8MXwwfDYzOTI0NTUzNTE3Njc0OTEyNXxVbmtub3dufFRXRnBiR1pzYjNkOGV5SkZiWEIwZVUxaGNHa2lPblJ5ZFdVc0lsWWlPaUl3TGpBdU1EQXdNQ0lzSWxBaU9pSlhhVzR6TWlJc0lrRk9Jam9pVFdGcGJDSXNJbGRVSWpveWZRPT18MHx8fA%3d%3d&amp;sdata=dE1xSUZhTlozM2ZSU0JQSmMzMTlhbTF6NG9OZ1M5ekpBTS9hWjQ1WDJncz0%3d" target="_blank" rel="noreferrer">Recording ↗</a></span></div>
             </article>
             <article class="session-card" data-origin="guild" data-type="session" data-date="2026-10-13T12:00" data-search="oh build guild session upcoming october topic tbd">
               <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>OH Build Guild session</p>
@@ -338,6 +344,26 @@
             </article>
           </div>
           <div class="empty" id="empty-state">No sessions match that search. Try another topic or choose “All sessions.”</div>
+          <section class="notes-panel" id="september-8-notes" aria-labelledby="september-8-notes-heading">
+            <h3 id="september-8-notes-heading">September 8 meeting notes</h3>
+            <h4>Discussion</h4>
+            <ul>
+              <li><strong>Token Optimization Strategies in GitHub Copilot:</strong> Ricardo, Kenedy, Al, August, and Thomas discussed strategies for optimizing token usage in GitHub Copilot, including plan mode, model selection, and practical experiences from refactoring large codebases. Thomas shared their team's approach and challenges.</li>
+              <li><strong>Use Cases and Personas for GitHub Copilot:</strong> Kenedy presented common use cases such as code completion, documentation, SQL query optimization, and skill learning, encouraging participants to identify their roles and explore new ways to leverage Copilot.</li>
+              <li><strong>Agentic Coding and GitHub Copilot App Interfaces:</strong> August and Ricardo discussed the evolution of agentic coding in GitHub Copilot, including the standalone app, agent window, and CLI interfaces, and how these tools support orchestration, session management, and outcome-focused workflows.</li>
+              <li><strong>Community Engagement and Future Session Planning:</strong> Ricardo solicited feedback on preferred topics and interfaces, encouraged sharing use cases and challenges, and outlined plans to tailor future sessions for attendee roles and interests, including non-developer participation.</li>
+              <li><strong>Resource Sharing and Landing Page Updates:</strong> Ricardo and Kenedy discussed the Build Guild landing page as a central resource for session decks, meeting notes, recordings, and related events, with plans to update it regularly and ensure accessibility for all participants.</li>
+            </ul>
+            <h4>Follow-up tasks</h4>
+            <ul>
+              <li><strong>Landing page updates:</strong> Add the session deck, meeting notes, and recording links from current and past sessions.</li>
+              <li><strong>Landing page access:</strong> Share the landing page URL in the meeting chat.</li>
+              <li><strong>Presentation materials:</strong> Send the three-slide PowerPoint on GitHub Copilot use cases for inclusion on the website and participant access.</li>
+              <li><strong>Technical debt refactoring insights:</strong> Invite team members involved in the refactoring project to future sessions to share their experiences with AI-assisted refactoring.</li>
+              <li><strong>Impact dashboard awareness:</strong> Ensure Thomas and relevant participants review and use the impact dashboard to assess ROI and time savings.</li>
+              <li><strong>Future session topics:</strong> Solicit feedback on preferred topics and update the landing page with the selected October topic.</li>
+            </ul>
+          </section>
         </div>
       </section>
 
