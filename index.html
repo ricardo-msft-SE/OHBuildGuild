@@ -310,7 +310,7 @@
               <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>OH Build Guild session</p>
               <div class="session-top"><div class="date-block">August 2026<b>11</b></div><span class="tag">First session</span></div>
               <div class="session-content"><h3>Token optimization</h3><p>Improve agent quality while reducing unnecessary token usage and cost. Context, prompts, model choice, and testing patterns you can apply right away.</p></div>
-              <div class="session-footer"><span>45 min · Notes</span><span><a href="assets/agent-quality-token-optimization.pdf" download="Agent-Quality-and-Token-Optimization.pdf">Session deck ⬇</a></span></div>
+              <div class="session-footer"><span>45 min · Notes</span><span><a href="#august-11-notes">Meeting notes ↘</a> · <a href="assets/agent-quality-token-optimization.pdf" download="Agent-Quality-and-Token-Optimization.pdf">Session deck ⬇</a></span></div>
             </article>
             <article class="session-card" data-origin="external" data-type="workshop" data-date="2026-06-22T12:00" data-search="external event github copilot token optimization developer tools livestream english">
               <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>External event · Microsoft Reactor</p>
@@ -344,24 +344,104 @@
             </article>
           </div>
           <div class="empty" id="empty-state">No sessions match that search. Try another topic or choose “All sessions.”</div>
+          <section class="notes-panel" id="august-11-notes" aria-labelledby="august-11-notes-heading">
+            <h3 id="august-11-notes-heading">August 11 meeting notes</h3>
+            <p><strong>Meeting:</strong> OH Build Guild Monthly Series<br /><strong>Topic:</strong> GitHub Copilot token optimization, agent quality, and cost management<br /><strong>Presenters:</strong> Kennedy, Ricardo Wilkins, Al Barnes, August Spinks, and Madiha Khan</p>
+            <h4>Executive summary</h4>
+            <p>The session focused on how GitHub Copilot users can maximize value from AI credits by improving <strong>agent quality and prompt efficiency</strong>, rather than simply minimizing token consumption. The presenters argued that the goal should be to make every token count by providing better context, choosing appropriate models, managing context windows, and using instructions, skills, and agents effectively.</p>
+            <h4>Key takeaways</h4>
+            <ul>
+              <li><strong>Focus on quality, not just cost:</strong> “Token optimization” should mean improving outcomes and ROI, not simply reducing spend. Higher quality prompts and workflows reduce rework and prevent repeated prompting.</li>
+              <li><strong>Avoid “agent gambling”:</strong> Create better prompts up front, add appropriate guardrails, use skills and custom agents, and treat prompting more like planning a mission than trial and error.</li>
+              <li><strong>Bad AI output compounds over time:</strong> Validate outputs early, test frequently, and avoid letting agents continue building on questionable results.</li>
+            </ul>
+            <h4>How context windows affect results</h4>
+            <p><strong>Give: “As little context as possible, but as much as required.”</strong></p>
+            <ul>
+              <li>Don't attach entire repositories unnecessarily.</li>
+              <li>Attach files you already know are relevant.</li>
+              <li>Highlight specific files or code ranges when possible.</li>
+              <li>Reduce agent reasoning work by supplying obvious context yourself.</li>
+            </ul>
+            <h4>Start new sessions frequently</h4>
+            <p>Previous conversation history is sent back with every prompt in a session, creating cached context that grows over time. For unrelated tasks, start a new session, such as for a bug fix, documentation task, or new feature. This prevents unnecessary context growth and token consumption.</p>
+            <h4>Context window biases</h4>
+            <ul>
+              <li><strong>Lost-in-the-middle bias:</strong> When a session grows, the model can lose track of instructions in the middle of the conversation and revert to earlier topics. Start a new session when changing tasks.</li>
+              <li><strong>Recency bias:</strong> Once a context window exceeds roughly 50% utilization, models increasingly prioritize recent content and may forget earlier instructions, skills, or system guidance. Keep context windows under about 60–70% utilization when possible.</li>
+            </ul>
+            <h4>The two biggest cost levers</h4>
+            <ul>
+              <li><strong>Model selection:</strong> Use high-reasoning models for architecture, planning, complex debugging, and large modernization efforts. Use lightweight or mid-tier models for implementation once a plan is established. Consider Auto Mode, which selects models automatically and provides a token discount.</li>
+              <li><strong>Context engineering:</strong> Become effective “context engineers” by deciding what files to include, what instructions to provide, what skills to activate, and what context to leave out. Provide enough information for success without overwhelming the model.</li>
+            </ul>
+            <h4>Practical prompting recommendations</h4>
+            <ul>
+              <li><strong>Be specific:</strong> Instead of “Fix the bug,” identify the issue and describe the observed behavior.</li>
+              <li><strong>Add stop conditions:</strong> Explicitly tell Copilot when to stop, such as “Fix the bug and stop,” “Make the change but don't commit,” or “Return only code.”</li>
+              <li><strong>Provide known context up front:</strong> Attach relevant files and documentation instead of forcing Copilot to discover them through additional reasoning.</li>
+            </ul>
+            <h4>Skills, instructions, MCPs, and agents</h4>
+            <ul>
+              <li><strong>Copilot instructions:</strong> Use concise persistent instructions for coding standards, required guardrails, output formatting, and common mistakes to avoid. Keep them short because they are loaded into every session.</li>
+              <li><strong>Skills:</strong> Create skills only for knowledge Copilot wouldn't naturally know, and avoid creating skills for common frameworks unless they contain organization-specific guidance.</li>
+              <li><strong>MCP servers:</strong> MCPs can be powerful but expensive. Disable unused MCPs, enable only required tools, and consider CLI alternatives where available because they can be more token-efficient.</li>
+            </ul>
+            <h4>Testing strategy</h4>
+            <p><strong>Implement → Test → Implement → Test</strong></p>
+            <p>Testing incrementally instead of implementing everything and testing once at the end limits the impact of compound errors and catches problems earlier.</p>
+            <h4>Interesting example shared</h4>
+            <p>The presenters described a case where a user asked Copilot to compare two Excel files directly. Instead, they instructed Copilot to generate a script that compares the files, run the script, and review the output. This completed faster and used fewer tokens because the work shifted into code execution rather than large-scale agent reasoning.</p>
+            <h4>Top 5 actions recommended</h4>
+            <ol>
+              <li>Choose the right model for the task.</li>
+              <li>Use clear, specific prompts.</li>
+              <li>Plan before implementation.</li>
+              <li>Create effective guardrails through instructions and skills.</li>
+              <li>Keep Copilot instruction files concise and focused.</li>
+            </ol>
+            <p><strong>Bottom line:</strong> Successful GitHub Copilot usage is increasingly about <strong>context engineering and workflow design</strong>, not simply picking the smartest model. Teams that provide cleaner context, better prompts, and tighter guardrails will achieve better code quality, lower token usage, and higher ROI.</p>
+          </section>
           <section class="notes-panel" id="september-8-notes" aria-labelledby="september-8-notes-heading">
             <h3 id="september-8-notes-heading">September 8 meeting notes</h3>
             <h4>Discussion</h4>
             <ul>
-              <li><strong>Token Optimization Strategies in GitHub Copilot:</strong> Ricardo, Kenedy, Al, August, and Thomas discussed strategies for optimizing token usage in GitHub Copilot, including plan mode, model selection, and practical experiences from refactoring large codebases. Thomas shared their team's approach and challenges.</li>
-              <li><strong>Use Cases and Personas for GitHub Copilot:</strong> Kenedy presented common use cases such as code completion, documentation, SQL query optimization, and skill learning, encouraging participants to identify their roles and explore new ways to leverage Copilot.</li>
-              <li><strong>Agentic Coding and GitHub Copilot App Interfaces:</strong> August and Ricardo discussed the evolution of agentic coding in GitHub Copilot, including the standalone app, agent window, and CLI interfaces, and how these tools support orchestration, session management, and outcome-focused workflows.</li>
-              <li><strong>Community Engagement and Future Session Planning:</strong> Ricardo solicited feedback on preferred topics and interfaces, encouraged sharing use cases and challenges, and outlined plans to tailor future sessions for attendee roles and interests, including non-developer participation.</li>
-              <li><strong>Resource Sharing and Landing Page Updates:</strong> Ricardo and Kenedy discussed the Build Guild landing page as a central resource for session decks, meeting notes, recordings, and related events, with plans to update it regularly and ensure accessibility for all participants.</li>
-            </ul>
-            <h4>Follow-up tasks</h4>
-            <ul>
-              <li><strong>Landing page updates:</strong> Add the session deck, meeting notes, and recording links from current and past sessions.</li>
-              <li><strong>Landing page access:</strong> Share the landing page URL in the meeting chat.</li>
-              <li><strong>Presentation materials:</strong> Send the three-slide PowerPoint on GitHub Copilot use cases for inclusion on the website and participant access.</li>
-              <li><strong>Technical debt refactoring insights:</strong> Invite team members involved in the refactoring project to future sessions to share their experiences with AI-assisted refactoring.</li>
-              <li><strong>Impact dashboard awareness:</strong> Ensure Thomas and relevant participants review and use the impact dashboard to assess ROI and time savings.</li>
-              <li><strong>Future session topics:</strong> Solicit feedback on preferred topics and update the landing page with the selected October topic.</li>
+              <li><strong>Token Optimization Strategies in GitHub Copilot:</strong> Ricardo, Kennedy, Al, August, and Thomas discussed various strategies for optimizing token usage in GitHub Copilot, including plan mode, model selection, and practical experiences from refactoring large codebases, with Thomas sharing their team's approach and challenges.
+                <ul>
+                  <li><strong>Plan Mode Versus Agent Mode:</strong> Ricardo explained the benefits of starting sessions in plan mode within GitHub Copilot, which allows for ideation and planning before implementation, potentially reducing token consumption and costs by using less expensive models for planning and more powerful models for execution.</li>
+                  <li><strong>Model Selection and Cost Optimization:</strong> Ricardo highlighted the “auto” model selection feature in GitHub Copilot, which automatically chooses the most appropriate model for a given task, offering a discount and helping users optimize costs by matching model complexity to task requirements.</li>
+                  <li><strong>Refactoring Large Codebases:</strong> Thomas described their team's use of GitHub Copilot and other AI tools to refactor enterprise Java beans and clean up technical debt, noting that while token consumption was high, the process was faster and cheaper than manual rewriting, and sharing challenges with maintaining context across multiple steps.</li>
+                  <li><strong>Managing Context Loss in Multi-Step Tasks:</strong> Thomas and Ricardo discussed issues where Copilot loses context after several steps in a refactoring process, suggesting that breaking tasks into smaller, well-defined chunks may help maintain context and reduce token waste.</li>
+                  <li><strong>Impact Dashboard and ROI Measurement:</strong> Al introduced the impact dashboard, which allows users to input their efforts and receive feedback on the ROI, time savings, and overall impact of using GitHub Copilot, providing a quantitative measure for optimization strategies.</li>
+                </ul>
+              </li>
+              <li><strong>Use Cases and Personas for GitHub Copilot:</strong> Kennedy presented common use cases for GitHub Copilot, such as code completion, documentation, SQL query optimization, and skill learning, encouraging participants to identify their roles and explore new ways to leverage Copilot, with internal examples of automation and skill sharing.
+                <ul>
+                  <li><strong>Common Use Cases:</strong> Kennedy showcased three slides outlining typical use cases for GitHub Copilot, including code completion, documentation generation, SQL query optimization, and learning new skills, emphasizing the versatility of Copilot across different development tasks.</li>
+                  <li><strong>Role-Based Application:</strong> Kennedy encouraged participants to consider their specific roles and how Copilot could be tailored to their needs, suggesting that identifying relevant use cases by persona can help users discover new ways to benefit from the tool.</li>
+                  <li><strong>Internal Automation and Skill Sharing:</strong> Kennedy described how Microsoft teams internally create and share automations and skills, starting from individual contributions and expanding to team-wide repositories, fostering a collaborative environment for skill development and tool integration.</li>
+                </ul>
+              </li>
+              <li><strong>Agentic Coding and GitHub Copilot App Interfaces:</strong> August and Ricardo discussed the evolution of agentic coding in GitHub Copilot, highlighting the standalone app, agent window, and CLI interfaces, and explaining how these tools support orchestration, session management, and outcome-focused workflows for diverse user roles.
+                <ul>
+                  <li><strong>Agent Window and Session Management:</strong> August demonstrated the agent window in GitHub Copilot, which provides a session-based, outcome-focused interface where agents handle coding tasks, allowing users to manage projects, view chats, and configure settings for plugins and skills.</li>
+                  <li><strong>Standalone App Versus IDE Integration:</strong> Ricardo and August compared the GitHub Copilot standalone app with IDE integrations like Visual Studio and VS Code, noting that the app offers a more conversational, agent-first approach, while IDE integrations cater to code-centric workflows.</li>
+                  <li><strong>CLI and Automation Capabilities:</strong> August explained that the CLI interface is favored by platform engineers and those needing automation, while the agent window and app are more suited for outcome-driven tasks, with flexibility to choose based on user comfort and project requirements.</li>
+                  <li><strong>Autopilot Mode and Technical Debt Management:</strong> August described the autopilot mode in the agent window, which enables fully autonomous coding sessions focused on producing pull requests and documentation, aiming to reduce technical debt and streamline future codebase onboarding.</li>
+                </ul>
+              </li>
+              <li><strong>Community Engagement and Future Session Planning:</strong> Ricardo solicited feedback from participants regarding preferred topics and interfaces, encouraged sharing of use cases and challenges, and outlined plans to tailor future sessions and content based on attendee roles and interests, including non-developer participation.
+                <ul>
+                  <li><strong>Feedback and Topic Selection:</strong> Ricardo asked participants to provide feedback on which topics and tools resonate most, inviting suggestions for future session content and offering to organize demos or deep dives based on group interest.</li>
+                  <li><strong>Non-Developer Inclusion:</strong> Ricardo noted the presence of non-developer users in the session, emphasizing the importance of addressing their needs and adapting content to ensure value for a broader audience.</li>
+                </ul>
+              </li>
+              <li><strong>Resource Sharing and Landing Page Updates:</strong> Ricardo and Kennedy discussed the Build Guild landing page as a central resource for session decks, meeting notes, recordings, and related events, with plans to update it regularly and ensure accessibility for all participants.
+                <ul>
+                  <li><strong>Landing Page Content:</strong> Ricardo described the landing page as a one-stop shop for session information, including past and upcoming events, session decks, meeting notes, and links to recordings, aiming to streamline access for attendees.</li>
+                  <li><strong>External Event Promotion:</strong> Ricardo mentioned upcoming external events, such as GitHub Demo Day and token optimization deep dives, and committed to sharing relevant links and resources on the landing page.</li>
+                </ul>
+              </li>
             </ul>
           </section>
         </div>
