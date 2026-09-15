@@ -525,7 +525,8 @@
       function sortSessions() {
         const ordered = Array.from(grid.querySelectorAll(".session-card")).sort((a, b) => {
           const sessionDiff = Number(isSessionCard(b)) - Number(isSessionCard(a));
-          return sessionDiff || cardTime(b) - cardTime(a);
+          if (sessionDiff) return sessionDiff;
+          return isSessionCard(a) ? cardTime(b) - cardTime(a) : cardTime(a) - cardTime(b);
         });
         ordered.forEach((card) => grid.appendChild(card));
         return ordered;
