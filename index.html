@@ -44,6 +44,7 @@
         --cp-highlight: rgba(177, 31, 75, 0.12);
         --cp-guild: #0f6cbd;
         --cp-guild-soft: rgba(15, 108, 189, 0.1);
+        --cp-guild-card: #eaf4fc;
         --cp-external: #6b3fa0;
         --cp-external-soft: rgba(107, 63, 160, 0.1);
       }
@@ -74,6 +75,7 @@
         --cp-highlight: rgba(253, 142, 161, 0.12);
         --cp-guild: #6cb8ff;
         --cp-guild-soft: rgba(108, 184, 255, 0.16);
+        --cp-guild-card: #1d3548;
         --cp-external: #d3b0ff;
         --cp-external-soft: rgba(211, 176, 255, 0.16);
       }
@@ -205,6 +207,7 @@
       .legend b { color: var(--cp-text); }
 
       .session-card[data-origin] { border-left: 4px solid var(--cp-guild); }
+      .session-card[data-origin="guild"] { min-height: 300px; border-color: var(--cp-guild); background: var(--cp-guild-card); }
       .session-card[data-origin="external"] { border-left-color: var(--cp-external); background: var(--cp-bg-elevated); }
       .card-origin {
         display: flex; align-items: center; gap: 8px; margin: 0; padding: 9px 18px;
@@ -212,6 +215,18 @@
         font-size: 0.68rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
       }
       .session-card[data-origin="external"] .card-origin { background: var(--cp-external-soft); color: var(--cp-external); }
+      .session-card[data-origin="external"] {
+        align-self: start; min-height: 220px; box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+      }
+      .session-card[data-origin="external"] .card-origin { padding: 7px 14px; font-size: 0.6rem; }
+      .session-card[data-origin="external"] .session-top { padding: 12px 14px 8px; }
+      .session-card[data-origin="external"] .date-block { font-size: 0.64rem; }
+      .session-card[data-origin="external"] .date-block b { font-size: 1.25rem; }
+      .session-card[data-origin="external"] .tag { padding: 4px 7px; font-size: 0.6rem; }
+      .session-card[data-origin="external"] .session-content { padding: 14px; }
+      .session-card[data-origin="external"] .session-content h3 { margin-bottom: 6px; font-size: 1.1rem; }
+      .session-card[data-origin="external"] .session-content p { font-size: 0.8rem; }
+      .session-card[data-origin="external"] .session-footer { padding: 10px 14px; font-size: 0.76rem; }
 
       .callout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 22px; align-items: center; padding: 30px; border: 1px solid var(--cp-link); border-radius: 16px; background: var(--cp-accent-soft); margin-bottom: 46px; }
       .callout h2 { margin: 0 0 8px; font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1; letter-spacing: -0.06em; }
