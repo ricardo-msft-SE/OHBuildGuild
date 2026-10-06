@@ -3,564 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="OH Build Guild — a monthly community of practice for developers building better with GitHub Copilot."
-    />
-    <title>OH Build Guild | GitHub Copilot</title>
-    <script>
-      (() => {
-        const param = new URLSearchParams(window.location.search).get("scoutTheme");
-        const theme =
-          param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-        document.documentElement.setAttribute("data-theme", theme);
-      })();
-    </script>
+    <meta name="description" content="The OH Build Guild page has moved." />
+    <title>This page has moved | OH Build Guild</title>
     <style>
-      :root {
-        color-scheme: light;
-        --cp-bg: #f7f4ef;
-        --cp-bg-elevated: #fcfbf8;
-        --cp-surface: #ffffff;
-        --cp-surface-soft: #f5f5f5;
-        --cp-border: #dedede;
-        --cp-border-strong: #919191;
-        --cp-text: #242424;
-        --cp-text-muted: #5c5c5c;
-        --cp-text-soft: #6f6f6f;
-        --cp-accent: #b11f4b;
-        --cp-accent-hover: #9a1a41;
-        --cp-accent-soft: rgba(177, 31, 75, 0.08);
-        --cp-accent-fg: #ffffff;
-        --cp-success: #16a34a;
-        --cp-danger: #dc2626;
-        --cp-warning: #f59e0b;
-        --cp-link: #0078d4;
-        --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
-        --cp-overlay: rgba(255, 255, 255, 0.8);
-        --cp-panel: rgba(255, 255, 255, 0.86);
-        --cp-panel-strong: rgba(255, 255, 255, 0.96);
-        --cp-sheen: rgba(255, 255, 255, 0.55);
-        --cp-highlight: rgba(177, 31, 75, 0.12);
-        --cp-guild: #0f6cbd;
-        --cp-guild-soft: rgba(15, 108, 189, 0.1);
-        --cp-guild-card: #eaf4fc;
-        --cp-external: #6b3fa0;
-        --cp-external-soft: rgba(107, 63, 160, 0.1);
-      }
-      html[data-theme="dark"] {
-        color-scheme: dark;
-        --cp-bg: #3d3b3a;
-        --cp-bg-elevated: #343231;
-        --cp-surface: #292929;
-        --cp-surface-soft: #2e2e2e;
-        --cp-border: #474747;
-        --cp-border-strong: #5f5f5f;
-        --cp-text: #dedede;
-        --cp-text-muted: #919191;
-        --cp-text-soft: #b0b0b0;
-        --cp-accent: #fd8ea1;
-        --cp-accent-hover: #fb7b91;
-        --cp-accent-soft: rgba(253, 142, 161, 0.14);
-        --cp-accent-fg: #1a1a1a;
-        --cp-success: #4ade80;
-        --cp-danger: #f87171;
-        --cp-warning: #fbbf24;
-        --cp-link: #4da6ff;
-        --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
-        --cp-overlay: rgba(41, 41, 41, 0.88);
-        --cp-panel: rgba(41, 41, 41, 0.72);
-        --cp-panel-strong: rgba(41, 41, 41, 0.96);
-        --cp-sheen: rgba(255, 255, 255, 0.04);
-        --cp-highlight: rgba(253, 142, 161, 0.12);
-        --cp-guild: #6cb8ff;
-        --cp-guild-soft: rgba(108, 184, 255, 0.16);
-        --cp-guild-card: #1d3548;
-        --cp-external: #d3b0ff;
-        --cp-external-soft: rgba(211, 176, 255, 0.16);
+      * {
+        box-sizing: border-box;
       }
 
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
       body {
+        display: grid;
+        min-height: 100vh;
         margin: 0;
-        background: var(--cp-bg);
-        color: var(--cp-text);
-        font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
-        line-height: 1.5;
+        place-items: center;
+        padding: 24px;
+        background: #f6f8fa;
+        color: #1f2328;
+        font-family: "Segoe UI", Arial, sans-serif;
       }
-      a { color: inherit; text-decoration: none; }
-      button, input { font: inherit; }
-      button { cursor: pointer; }
-      .shell { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
 
-      .topline {
-        border-bottom: 1px solid var(--cp-border);
-        background: var(--cp-surface);
-        color: var(--cp-text-muted);
-        font-size: 0.78rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+      main {
+        max-width: 560px;
+        padding: 48px;
+        border: 1px solid #d0d7de;
+        border-radius: 12px;
+        background: #ffffff;
+        box-shadow: 0 8px 24px rgba(140, 149, 159, 0.2);
+        text-align: center;
       }
-      .topline-inner { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; }
-      .topline strong { color: var(--cp-link); }
 
-      header {
-        position: relative;
-        overflow: hidden;
-        min-height: 570px;
-        background:
-          linear-gradient(115deg, var(--cp-surface) 0%, var(--cp-surface-soft) 52%, var(--cp-accent-soft) 100%);
-        border-bottom: 1px solid var(--cp-border);
+      h1 {
+        margin: 0 0 16px;
+        font-size: clamp(2rem, 6vw, 3rem);
       }
-      header::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        opacity: 0.35;
-        background-image: linear-gradient(var(--cp-border) 1px, transparent 1px), linear-gradient(90deg, var(--cp-border) 1px, transparent 1px);
-        background-size: 48px 48px;
-        mask-image: linear-gradient(90deg, black, transparent 75%);
-      }
-      .nav { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 24px 0; }
-      .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -0.03em; }
-      .brand-mark {
-        display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--cp-link);
-        border-radius: 10px; color: var(--cp-link); background: var(--cp-accent-soft); font-size: 1.25rem;
-      }
-      .brand span { font-size: 1.05rem; }
-      .brand small { display: block; color: var(--cp-text-muted); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.64rem; }
-      .nav-actions { display: flex; align-items: center; gap: 10px; }
-      .nav-link { color: var(--cp-text-muted); font-size: 0.9rem; }
-      .nav-link:hover { color: var(--cp-link); }
-      .icon-button, .primary-button, .ghost-button, .filter {
-        border: 1px solid var(--cp-border); border-radius: 0.625rem; background: var(--cp-surface); color: var(--cp-text);
-        transition: 160ms ease; 
-      }
-      .icon-button { width: 38px; height: 38px; font-size: 1rem; }
-      .icon-button:hover, .ghost-button:hover, .filter:hover { border-color: var(--cp-link); color: var(--cp-link); }
-      .primary-button { border-color: var(--cp-link); background: var(--cp-link); color: var(--cp-accent-fg); font-weight: 700; padding: 11px 16px; }
-      .primary-button:hover { background: var(--cp-link); border-color: var(--cp-link); }
-      .ghost-button { padding: 10px 14px; font-weight: 700; }
 
-      .hero { position: relative; display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(340px, 0.96fr); align-items: center; gap: 48px; padding: 52px 0 80px; }
-      .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--cp-link); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
-      .eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--cp-link); }
-      h1 { max-width: 700px; margin: 16px 0 18px; font-size: clamp(4.3rem, 10vw, 8.6rem); line-height: 0.82; letter-spacing: -0.09em; text-transform: uppercase; }
-      h1 span { display: block; color: var(--cp-link); }
-      .hero-copy { max-width: 550px; color: var(--cp-text-muted); font-size: 1.15rem; }
-      .hero-copy strong { color: var(--cp-text); }
-      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-      .speaker-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 28px; }
-      .speaker { display: grid; grid-template-columns: 42px minmax(0, 1fr); align-items: center; gap: 9px; min-width: 150px; }
-      .speaker-avatar {
-        display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--cp-link);
-        border-radius: 50%; background: var(--cp-accent-soft); color: var(--cp-link); font-size: 0.78rem; font-weight: 800; overflow: hidden;
+      p {
+        margin: 0 0 32px;
+        color: #59636e;
+        font-size: 1.125rem;
       }
-      .speaker-avatar img { width: 100%; height: 100%; object-fit: cover; }
-      .speaker-name { display: block; color: var(--cp-text); font-size: 0.82rem; font-weight: 800; line-height: 1.15; }
-      .speaker-title { display: block; margin-top: 3px; color: var(--cp-text-muted); font-size: 0.68rem; line-height: 1.2; }
-      .speaker-company { display: flex; align-items: center; gap: 4px; margin-top: 4px; color: var(--cp-text-soft); font-size: 0.62rem; line-height: 1; }
-      .microsoft-mark { display: grid; grid-template-columns: repeat(2, 4px); gap: 1px; width: 9px; height: 9px; }
-      .microsoft-mark i { display: block; width: 4px; height: 4px; background: var(--cp-link); }
-      .hero-art { position: relative; min-height: 420px; display: grid; place-items: center; }
-      .flyer-frame { width: min(100%, 390px); padding: 10px; border: 1px solid var(--cp-link); border-radius: 16px; background: var(--cp-panel); box-shadow: var(--cp-shadow); transform: rotate(2deg); backdrop-filter: blur(8px); }
-      .flyer-frame img { display: block; width: 100%; height: auto; border-radius: 10px; }
 
-      .section { padding: 78px 0; }
-      .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
-      .section-heading h2 { margin: 5px 0 0; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1; letter-spacing: -0.06em; }
-      .section-heading p { max-width: 430px; margin: 0; color: var(--cp-text-muted); }
-      .agenda-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 52px; }
-      .agenda-item { display: flex; gap: 14px; align-items: center; padding: 18px; border: 1px solid var(--cp-border); border-radius: 16px; background: var(--cp-surface); box-shadow: var(--cp-shadow); }
-      .agenda-icon { display: grid; place-items: center; flex: 0 0 48px; height: 48px; border: 1px solid var(--cp-link); border-radius: 10px; color: var(--cp-link); font-size: 1.35rem; }
-      .agenda-item strong { display: block; font-size: 1.05rem; } .agenda-item span { color: var(--cp-text-muted); font-size: 0.86rem; }
-      .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
-      .filter { padding: 8px 12px; color: var(--cp-text-muted); font-size: 0.84rem; }
-      .filter.active { border-color: var(--cp-link); background: var(--cp-accent-soft); color: var(--cp-link); font-weight: 800; }
-      .search { width: min(100%, 280px); padding: 10px 13px; border: 1px solid var(--cp-border); border-radius: 0.625rem; background: var(--cp-surface); color: var(--cp-text); outline: none; }
-      .search:focus { border-color: var(--cp-link); box-shadow: 0 0 0 3px var(--cp-accent-soft); }
-      .session-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-      .session-card { display: flex; flex-direction: column; min-height: 280px; border: 1px solid var(--cp-border); border-radius: 16px; background: var(--cp-surface); overflow: hidden; box-shadow: var(--cp-shadow); }
-      .session-card[hidden] { display: none; }
-      .session-top { display: flex; justify-content: space-between; align-items: start; padding: 18px 18px 12px; border-bottom: 1px solid var(--cp-border); }
-      .date-block { color: var(--cp-link); font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.72rem; }
-      .date-block b { display: block; margin-top: 2px; color: var(--cp-text); font-size: 1.5rem; letter-spacing: -0.05em; }
-      .tag { padding: 5px 8px; border-radius: 999px; background: var(--cp-accent-soft); color: var(--cp-link); font-size: 0.68rem; font-weight: 800; text-transform: uppercase; }
-      .session-content { flex: 1; padding: 18px; } .session-content h3 { margin: 0 0 8px; font-size: 1.35rem; letter-spacing: -0.035em; }
-      .session-content p { margin: 0; color: var(--cp-text-muted); font-size: 0.92rem; }
-      .session-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-top: 1px solid var(--cp-border); color: var(--cp-text-muted); font-size: 0.85rem; }
-      .session-footer a { color: var(--cp-link); font-weight: 700; }
-      .empty { display: none; padding: 30px; border: 1px dashed var(--cp-border-strong); border-radius: 16px; color: var(--cp-text-muted); text-align: center; }
-      .empty.show { display: block; }
-      .notes-panel { margin-top: 24px; padding: 24px; border: 1px solid var(--cp-border); border-radius: 16px; background: var(--cp-surface); }
-      .notes-panel h3 { margin: 0 0 18px; font-size: 1.5rem; letter-spacing: -0.04em; }
-      .notes-panel h4 { margin: 20px 0 8px; color: var(--cp-link); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
-      .notes-panel ul { margin: 0; padding-left: 22px; color: var(--cp-text-muted); }
-      .notes-panel li + li { margin-top: 10px; }
-      .notes-panel strong { color: var(--cp-text); }
-
-      .legend { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 0 0 18px; padding: 0; list-style: none; color: var(--cp-text-muted); font-size: 0.84rem; }
-      .legend li { display: flex; align-items: center; gap: 8px; }
-      .origin-dot { flex: 0 0 auto; width: 10px; height: 10px; border-radius: 3px; background: var(--cp-guild); }
-      [data-origin="external"] .origin-dot { background: var(--cp-external); }
-      .legend b { color: var(--cp-text); }
-
-      .session-card[data-origin] { border-left: 4px solid var(--cp-guild); }
-      .session-card[data-origin="guild"] { min-height: 300px; border-color: var(--cp-guild); background: var(--cp-guild-card); }
-      .session-card[data-origin="external"] { border-left-color: var(--cp-external); background: var(--cp-bg-elevated); }
-      .card-origin {
-        display: flex; align-items: center; gap: 8px; margin: 0; padding: 9px 18px;
-        border-bottom: 1px solid var(--cp-border); background: var(--cp-guild-soft); color: var(--cp-guild);
-        font-size: 0.68rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
+      .redirect-button {
+        display: inline-block;
+        padding: 12px 20px;
+        border-radius: 6px;
+        background: #0969da;
+        color: #ffffff;
+        font-weight: 600;
+        text-decoration: none;
       }
-      .session-card[data-origin="external"] .card-origin { background: var(--cp-external-soft); color: var(--cp-external); }
-      .session-card[data-origin="external"] {
-        align-self: start; min-height: 220px; box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-      }
-      .session-card[data-origin="external"] .card-origin { padding: 7px 14px; font-size: 0.6rem; }
-      .session-card[data-origin="external"] .session-top { padding: 12px 14px 8px; }
-      .session-card[data-origin="external"] .date-block { font-size: 0.64rem; }
-      .session-card[data-origin="external"] .date-block b { font-size: 1.25rem; }
-      .session-card[data-origin="external"] .tag { padding: 4px 7px; font-size: 0.6rem; }
-      .session-card[data-origin="external"] .session-content { padding: 14px; }
-      .session-card[data-origin="external"] .session-content h3 { margin-bottom: 6px; font-size: 1.1rem; }
-      .session-card[data-origin="external"] .session-content p { font-size: 0.8rem; }
-      .session-card[data-origin="external"] .session-footer { padding: 10px 14px; font-size: 0.76rem; }
 
-      .callout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 22px; align-items: center; padding: 30px; border: 1px solid var(--cp-link); border-radius: 16px; background: var(--cp-accent-soft); margin-bottom: 46px; }
-      .callout h2 { margin: 0 0 8px; font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1; letter-spacing: -0.06em; }
-      .callout p { margin: 0; color: var(--cp-text-muted); } .callout-action { justify-self: end; text-align: right; }
-      .callout-buttons { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
-      .callout-action small { display: block; margin-top: 8px; color: var(--cp-text-muted); }
-      footer { padding: 28px 0; border-top: 1px solid var(--cp-border); color: var(--cp-text-muted); font-size: 0.85rem; }
-      .footer-inner { display: flex; justify-content: space-between; gap: 18px; } .footer-inner strong { color: var(--cp-text); }
-      @media (max-width: 800px) {
-        .hero { grid-template-columns: 1fr; gap: 10px; padding-top: 30px; } .hero-art { min-height: 300px; max-width: 530px; width: 100%; margin: 0 auto; }
-        .session-grid, .agenda-strip { grid-template-columns: 1fr; } .callout { grid-template-columns: 1fr; } .callout-action { justify-self: start; text-align: left; } .callout-buttons { justify-content: flex-start; }
+      .redirect-button:hover {
+        background: #0860ca;
       }
-      @media (max-width: 560px) {
-        .shell { width: min(100% - 28px, 1160px); } .topline-inner, .nav, .section-heading, .footer-inner { align-items: flex-start; flex-direction: column; }
-        .nav { gap: 16px; } .nav-actions { width: 100%; justify-content: space-between; } h1 { font-size: clamp(3.8rem, 20vw, 6rem); } .bot-card { inset: 20px 0 0 12px; }
+
+      .redirect-button:focus-visible {
+        outline: 3px solid #54aeff;
+        outline-offset: 3px;
       }
     </style>
   </head>
   <body>
-    <div class="topline">
-      <div class="shell topline-inner">
-        <span><strong>OH Build Guild</strong> · Community of practice</span>
-        <span>Second Tuesday · Every month</span>
-      </div>
-    </div>
-    <header id="top">
-      <div class="shell">
-        <nav class="nav" aria-label="Primary navigation">
-          <a class="brand" href="#top">
-            <span class="brand-mark" aria-hidden="true">✦</span>
-            <span><small>GitHub Copilot</small>OH Build Guild</span>
-          </a>
-          <div class="nav-actions">
-            <a class="nav-link" href="#sessions">Sessions</a>
-            <a class="nav-link" href="#about">About</a>
-            <button class="icon-button" id="theme-toggle" type="button" aria-label="Toggle color theme">◐</button>
-          </div>
-        </nav>
-        <div class="hero">
-          <div>
-            <div class="eyebrow">Build better. Together.</div>
-            <h1>Build<span>Guild</span></h1>
-            <p class="hero-copy">A monthly forum for developers and enthusiasts to <strong>learn, share, and build together</strong> with GitHub Copilot.</p>
-            <div class="hero-actions">
-              <a class="primary-button" href="#sessions">Explore sessions →</a>
-            </div>
-            <div class="speaker-row" aria-label="OH Build Guild speakers">
-              <div class="speaker">
-                <span class="speaker-avatar"><img src="assets/kenedy-thorne.png" alt="" /></span>
-                <span><span class="speaker-name">Kenedy Thorne</span><span class="speaker-title">Senior Solution Engineer</span><span class="speaker-company"><span class="microsoft-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Microsoft</span></span>
-              </div>
-              <div class="speaker">
-                <span class="speaker-avatar"><img src="assets/ricardo-wilkins.png" alt="" /></span>
-                <span><span class="speaker-name">Ricardo Wilkins</span><span class="speaker-title">Senior Solution Engineer</span><span class="speaker-company"><span class="microsoft-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Microsoft</span></span>
-              </div>
-              <div class="speaker">
-                <span class="speaker-avatar"><img src="assets/august-banks.png" alt="" /></span>
-                <span><span class="speaker-name">August Banks</span><span class="speaker-title">Senior Cloud Solution Architect</span><span class="speaker-company"><span class="microsoft-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Microsoft</span></span>
-              </div>
-            </div>
-          </div>
-          <div class="hero-art" aria-label="Illustration of a friendly coding assistant">
-            <div class="flyer-frame"><img src="assets/build-guild-flyer.png" alt="GitHub Copilot Build Guild flyer announcing Token Optimization as the first session topic" /></div>
-          </div>
-        </div>
-      </div>
-    </header>
-
     <main>
-      <section class="section" id="sessions">
-        <div class="shell">
-          <div class="callout" id="about">
-            <div><div class="eyebrow">Bring your questions</div><h2>Share your wins.<br />Listen. Learn. Level up.</h2><p>The Guild is better with more voices. Bring a tricky prompt, a clever workflow, or a "how would you solve this?" moment.</p></div>
-            <div class="callout-action"><div class="callout-buttons"><a class="primary-button" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_NjgxZmJkZWUtOTc1My00NmFmLWEwMDAtNzNlZGNjYzc0OWI0%40thread.v2/0?context=%7b%22Tid%22%3a%2272f988bf-86f1-41af-91ab-2d7cd011db47%22%2c%22Oid%22%3a%22fbf67f7a-760f-4f5e-9f23-6626f8a5c25c%22%7d" target="_blank" rel="noreferrer">Join Teams ↗</a><a class="ghost-button" href="mailto:?subject=Join%20us%20at%20OH%20Build%20Guild&amp;body=Hi%2C%0D%0A%0D%0AI%27d%20love%20for%20you%20to%20join%20us%20at%20OH%20Build%20Guild%2C%20a%20monthly%20community%20for%20developers%20and%20enthusiasts%20to%20learn%2C%20share%2C%20and%20build%20together%20with%20GitHub%20Copilot.%0D%0A%0D%0AWe%20meet%20on%20the%20second%20Tuesday%20of%20every%20month%2C%20and%20everyone%20is%20welcome.%0D%0A%0D%0ALearn%20more%20and%20find%20meeting%20details%3A%0D%0Ahttps%3A%2F%2Faka.ms%2Fohiobuildguild%0D%0A%0D%0AHope%20you%20can%20join%20us%21">Invite a teammate</a></div><small>Everyone is welcome — devs, architects, and curious builders.</small></div>
-          </div>
-          <div class="section-heading">
-            <div><div class="eyebrow">The session series</div><h2>Sessions & notes</h2></div>
-            <p>Catch up on the conversations, resources, and experiments from our monthly series.</p>
-          </div>
-          <ul class="legend" aria-label="What the session card colors mean">
-            <li data-origin="guild"><span class="origin-dot" aria-hidden="true"></span><span><b>OH Build Guild session</b> — hosted by the Guild</span></li>
-            <li data-origin="external"><span class="origin-dot" aria-hidden="true"></span><span><b>External event</b> — workshops, demos, and webinars hosted elsewhere</span></li>
-          </ul>
-          <div class="filters" role="toolbar" aria-label="Filter sessions">
-            <button class="filter active" type="button" data-filter="all">All sessions</button>
-            <button class="filter" type="button" data-filter="guild">Guild sessions</button>
-            <button class="filter" type="button" data-filter="external">External events</button>
-            <button class="filter" type="button" data-filter="deep-dive">Deep dives</button>
-            <button class="filter" type="button" data-filter="showcase">Showcases</button>
-            <button class="filter" type="button" data-filter="workshop">Workshops</button>
-            <input class="search" id="session-search" type="search" placeholder="Search sessions…" aria-label="Search sessions" />
-          </div>
-          <div class="session-grid" id="session-grid">
-            <article class="session-card" data-origin="guild" data-type="deep-dive" data-date="2026-08-11T12:00" data-search="oh build guild session token optimization quality cost agents">
-              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>OH Build Guild session</p>
-              <div class="session-top"><div class="date-block">August 2026<b>11</b></div><span class="tag">First session</span></div>
-              <div class="session-content"><h3>Token optimization</h3><p>Improve agent quality while reducing unnecessary token usage and cost. Context, prompts, model choice, and testing patterns you can apply right away.</p></div>
-              <div class="session-footer"><span>45 min · Notes</span><span><a href="#august-11-notes">Meeting notes ↘</a> · <a href="assets/agent-quality-token-optimization.pdf" download="Agent-Quality-and-Token-Optimization.pdf">Session deck ⬇</a></span></div>
-            </article>
-            <article class="session-card" data-origin="external" data-type="workshop" data-date="2026-06-22T12:00" data-search="external event github copilot token optimization developer tools livestream english">
-              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>External event · Microsoft Reactor</p>
-              <div class="session-top"><div class="date-block">June 2026<b>22</b></div><span class="tag">Workshop</span></div>
-              <div class="session-content"><h3>GitHub Copilot Token Optimization Deep Dive</h3><p>Explore practical techniques for improving GitHub Copilot workflows while reducing unnecessary token usage. Includes model selection, prompt design, and live demos.</p></div>
-              <div class="session-footer"><span>12:00–1:00 PM ET</span><a href="https://developer.microsoft.com/en-us/reactor/events/27334/" target="_blank" rel="noreferrer">View event ↗</a></div>
-            </article>
-            <article class="session-card" data-origin="guild" data-type="deep-dive" data-date="2026-09-08T12:00" data-search="oh build guild session september deep dive token optimization questions audience challenges next session meeting notes recording">
-              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>OH Build Guild session</p>
-              <div class="session-top"><div class="date-block">September 2026<b>8</b></div><span class="tag">Session notes</span></div>
-              <div class="session-content"><h3>Deep Dive: Token Optimization</h3><p>We'll continue to dive into the topics from last month, and take specific questions from the audience on any challenges people may be facing.</p></div>
-              <div class="session-footer"><span>45 min · Q&amp;A</span><span><a href="#september-8-notes">Meeting notes ↘</a> · <a href="https://ohiodas.sharepoint.com/:v:/s/OITCloudTeam/IQAFQTeE4hROTolhitKnPoTqAa9nHVsxrOmOMoGUXA2kEXE?e=Kulsw4&amp;xsdata=MDV8MDJ8cmljYXJkby53aWxraW5zQG1pY3Jvc29mdC5jb218ZDU5MmNiMTA1MGE1NGYxMzBjZjYwOGRmMGU2ZDU2MWZ8NzJmOTg4YmY4NmYxNDFhZjkxYWIyZDdjZDAxMWRiNDd8MXwwfDYzOTI0NTUzNTE3Njc0OTEyNXxVbmtub3dufFRXRnBiR1pzYjNkOGV5SkZiWEIwZVUxaGNHa2lPblJ5ZFdVc0lsWWlPaUl3TGpBdU1EQXdNQ0lzSWxBaU9pSlhhVzR6TWlJc0lrRk9Jam9pVFdGcGJDSXNJbGRVSWpveWZRPT18MHx8fA%3d%3d&amp;sdata=dE1xSUZhTlozM2ZSU0JQSmMzMTlhbTF6NG9OZ1M5ekpBTS9hWjQ1WDJncz0%3d" target="_blank" rel="noreferrer">Recording ↗</a></span></div>
-            </article>
-            <article class="session-card" data-origin="guild" data-type="session" data-date="2026-10-13T12:00" data-search="oh build guild session upcoming october topic tbd">
-              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>OH Build Guild session</p>
-              <div class="session-top"><div class="date-block">October 2026<b>13</b></div><span class="tag">Upcoming</span></div>
-              <div class="session-content"><h3>Topic TBD</h3><p>We're shaping the next Build Guild conversation now. Topic and session details coming soon.</p></div>
-              <div class="session-footer"><span>45 min · Session</span><span>Details coming soon</span></div>
-            </article>
-            <article class="session-card" data-origin="external" data-type="showcase" data-date="2026-10-07T12:00" data-search="external event spend smarter optimizing copilot tokens without slowing builders github demo days">
-              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>External event · GitHub Demo Days</p>
-              <div class="session-top"><div class="date-block">October 2026<b>7</b></div><span class="tag">Demo</span></div>
-              <div class="session-content"><h3>Spend Smarter: Optimizing Copilot Tokens Without Slowing Builders</h3><p>Learn how to reduce token waste, match the right model to each task, and set practical limits that protect budget without hurting delivery speed.</p></div>
-              <div class="session-footer"><span>12:00–12:45 PM EDT</span><a href="https://github.registration.goldcast.io/webinar/319dc29a-5c6d-4b09-afc3-22da968edfbb" target="_blank" rel="noreferrer">Register ↗</a></div>
-            </article>
-            <article class="session-card" data-origin="external" data-type="showcase" data-date="2026-09-10T08:00" data-search="external event github copilot day new releases real workflows live coding youtube live webinar">
-              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>External event · GitHub</p>
-              <div class="session-top"><div class="date-block">September 2026<b>10</b></div><span class="tag">YouTube Live</span></div>
-              <div class="session-content"><h3>GitHub Copilot Day</h3><p>New releases, real workflows, and live coding in a live webinar from GitHub.</p></div>
-              <div class="session-footer"><span>8:00 AM–12:00 PM PT</span><a href="https://www.youtube.com/live/0kOXsQUNzss" target="_blank" rel="noreferrer">Watch live ↗</a></div>
-            </article>
-            <article class="session-card" data-origin="external" data-type="showcase" data-date="2026-09-29T12:00" data-search="external event github copilot token optimization webinar controlling spend insight">
-              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>External event · Insight</p>
-              <div class="session-top"><div class="date-block">September 2026<b>29</b></div><span class="tag">Webinar</span></div>
-              <div class="session-content"><h3>Controlling GitHub Copilot Spend</h3><p>Join Insight and GitHub for practical guidance that supports more informed AI investment decisions.</p></div>
-              <div class="session-footer"><span>12:00 PM ET</span><a href="https://www.insight.com/en_US/content-and-resources/webinars/controlling-github-copilot-spend.html" target="_blank" rel="noreferrer">Register ↗</a></div>
-            </article>
-            <article class="session-card" data-origin="external" data-type="showcase" data-date="2026-10-06T14:00" data-search="external event github copilot token optimization webinar usage based billing xebia">
-              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>External event · Xebia</p>
-              <div class="session-top"><div class="date-block">October 2026<b>6</b></div><span class="tag">Webinar</span></div>
-              <div class="session-content"><h3>Master GitHub Copilot Usage-Based Billing</h3><p>Join Xebia and GitHub for a live webinar to learn more about GitHub Copilot's usage-based billing model.</p></div>
-              <div class="session-footer"><span>2:00 PM CEST</span><a href="https://events.xebia.com/master-github-usage-based-billing-oct-6" target="_blank" rel="noreferrer">Register ↗</a></div>
-            </article>
-            <article class="session-card" data-origin="external" data-type="showcase" data-date="2026-10-07T14:00" data-search="external event github copilot token optimization webinar optimize costs productivity andela">
-              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>External event · Andela</p>
-              <div class="session-top"><div class="date-block">October 2026<b>7</b></div><span class="tag">Webinar</span></div>
-              <div class="session-content"><h3>Optimize GitHub Copilot Token Costs &amp; Boost Productivity</h3><p>Join Andela and GitHub for a webinar designed for technology and finance leaders managing AI coding costs.</p></div>
-              <div class="session-footer"><span>2:00 PM BST</span><a href="https://www.andela.com/webinar/optimize-github-copilot-token-costs/october" target="_blank" rel="noreferrer">Register ↗</a></div>
-            </article>
-            <article class="session-card" data-origin="external" data-type="showcase" data-date="2026-10-12T11:30" data-search="external event github copilot token optimization webinar usage based billing budgets ai credits canarys">
-              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>External event · Canarys</p>
-              <div class="session-top"><div class="date-block">October 2026<b>12</b></div><span class="tag">Webinar</span></div>
-              <div class="session-content"><h3>Understanding Budgets for Usage Based Billing</h3><p>Join Canarys and GitHub for a live webinar about GitHub AI Credits and budgeting.</p></div>
-              <div class="session-footer"><span>11:30 AM IST</span><a href="https://canaryswebinar.ecanarys.com/" target="_blank" rel="noreferrer">Register ↗</a></div>
-            </article>
-            <article class="session-card" data-origin="external" data-type="showcase" data-date="2026-10-13T14:00" data-search="external event github copilot token optimization webinar usage based billing xebia">
-              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>External event · Xebia</p>
-              <div class="session-top"><div class="date-block">October 2026<b>13</b></div><span class="tag">Webinar</span></div>
-              <div class="session-content"><h3>Master GitHub Copilot Usage-Based Billing</h3><p>Join Xebia and GitHub for a live webinar to learn more about GitHub Copilot's usage-based billing model.</p></div>
-              <div class="session-footer"><span>2:00 PM CEST</span><a href="https://events.xebia.com/master-github-usage-based-billing-oct-13" target="_blank" rel="noreferrer">Register ↗</a></div>
-            </article>
-            <article class="session-card" data-origin="external" data-type="showcase" data-date="2026-10-14T11:00" data-search="external event github copilot token optimization webinar agent quality outcomes token spend slalom">
-              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>External event · Slalom</p>
-              <div class="session-top"><div class="date-block">October 2026<b>14</b></div><span class="tag">Webinar</span></div>
-              <div class="session-content"><h3>Agent Quality, Optimized: Improving Outcomes While Managing Token Spend</h3><p>Join Slalom and GitHub to learn how to improve agent quality while managing token consumption and costs.</p></div>
-              <div class="session-footer"><span>11:00 AM BST</span><a href="https://events.teams.microsoft.com/event/474970f0-e74e-4c86-b8f1-7564a629b055@9ca75128-a244-4596-877b-f24828e476e2?source=copyLinkLegacyShareLinkDialog" target="_blank" rel="noreferrer">Register ↗</a></div>
-            </article>
-            <article class="session-card" data-origin="external" data-type="showcase" data-date="2026-10-20T11:00" data-search="external event github copilot token optimization webinar agent quality outcomes token spend slalom">
-              <p class="card-origin"><span class="origin-dot" aria-hidden="true"></span>External event · Slalom</p>
-              <div class="session-top"><div class="date-block">October 2026<b>20</b></div><span class="tag">Webinar</span></div>
-              <div class="session-content"><h3>Agent Quality, Optimized: Improving Outcomes While Managing Token Spend</h3><p>Join Slalom and GitHub to learn how to improve agent quality while managing token consumption and costs.</p></div>
-              <div class="session-footer"><span>11:00 AM ET</span><a href="https://events.teams.microsoft.com/event/67a15b24-910a-4417-8b05-c0c388e51cc6@9ca75128-a244-4596-877b-f24828e476e2?source=copyLinkLegacyShareEventDialog" target="_blank" rel="noreferrer">Register ↗</a></div>
-            </article>
-          </div>
-          <div class="empty" id="empty-state">No sessions match that search. Try another topic or choose “All sessions.”</div>
-          <section class="notes-panel" id="august-11-notes" aria-labelledby="august-11-notes-heading">
-            <h3 id="august-11-notes-heading">August 11 meeting notes</h3>
-            <p><strong>Meeting:</strong> OH Build Guild Monthly Series<br /><strong>Topic:</strong> GitHub Copilot token optimization, agent quality, and cost management<br /><strong>Presenters:</strong> Kennedy, Ricardo Wilkins, Al Barnes, August Spinks, and Madiha Khan</p>
-            <h4>Executive summary</h4>
-            <p>The session focused on how GitHub Copilot users can maximize value from AI credits by improving <strong>agent quality and prompt efficiency</strong>, rather than simply minimizing token consumption. The presenters argued that the goal should be to make every token count by providing better context, choosing appropriate models, managing context windows, and using instructions, skills, and agents effectively.</p>
-            <h4>Key takeaways</h4>
-            <ul>
-              <li><strong>Focus on quality, not just cost:</strong> “Token optimization” should mean improving outcomes and ROI, not simply reducing spend. Higher quality prompts and workflows reduce rework and prevent repeated prompting.</li>
-              <li><strong>Avoid “agent gambling”:</strong> Create better prompts up front, add appropriate guardrails, use skills and custom agents, and treat prompting more like planning a mission than trial and error.</li>
-              <li><strong>Bad AI output compounds over time:</strong> Validate outputs early, test frequently, and avoid letting agents continue building on questionable results.</li>
-            </ul>
-            <h4>How context windows affect results</h4>
-            <p><strong>Give: “As little context as possible, but as much as required.”</strong></p>
-            <ul>
-              <li>Don't attach entire repositories unnecessarily.</li>
-              <li>Attach files you already know are relevant.</li>
-              <li>Highlight specific files or code ranges when possible.</li>
-              <li>Reduce agent reasoning work by supplying obvious context yourself.</li>
-            </ul>
-            <h4>Start new sessions frequently</h4>
-            <p>Previous conversation history is sent back with every prompt in a session, creating cached context that grows over time. For unrelated tasks, start a new session, such as for a bug fix, documentation task, or new feature. This prevents unnecessary context growth and token consumption.</p>
-            <h4>Context window biases</h4>
-            <ul>
-              <li><strong>Lost-in-the-middle bias:</strong> When a session grows, the model can lose track of instructions in the middle of the conversation and revert to earlier topics. Start a new session when changing tasks.</li>
-              <li><strong>Recency bias:</strong> Once a context window exceeds roughly 50% utilization, models increasingly prioritize recent content and may forget earlier instructions, skills, or system guidance. Keep context windows under about 60–70% utilization when possible.</li>
-            </ul>
-            <h4>The two biggest cost levers</h4>
-            <ul>
-              <li><strong>Model selection:</strong> Use high-reasoning models for architecture, planning, complex debugging, and large modernization efforts. Use lightweight or mid-tier models for implementation once a plan is established. Consider Auto Mode, which selects models automatically and provides a token discount.</li>
-              <li><strong>Context engineering:</strong> Become effective “context engineers” by deciding what files to include, what instructions to provide, what skills to activate, and what context to leave out. Provide enough information for success without overwhelming the model.</li>
-            </ul>
-            <h4>Practical prompting recommendations</h4>
-            <ul>
-              <li><strong>Be specific:</strong> Instead of “Fix the bug,” identify the issue and describe the observed behavior.</li>
-              <li><strong>Add stop conditions:</strong> Explicitly tell Copilot when to stop, such as “Fix the bug and stop,” “Make the change but don't commit,” or “Return only code.”</li>
-              <li><strong>Provide known context up front:</strong> Attach relevant files and documentation instead of forcing Copilot to discover them through additional reasoning.</li>
-            </ul>
-            <h4>Skills, instructions, MCPs, and agents</h4>
-            <ul>
-              <li><strong>Copilot instructions:</strong> Use concise persistent instructions for coding standards, required guardrails, output formatting, and common mistakes to avoid. Keep them short because they are loaded into every session.</li>
-              <li><strong>Skills:</strong> Create skills only for knowledge Copilot wouldn't naturally know, and avoid creating skills for common frameworks unless they contain organization-specific guidance.</li>
-              <li><strong>MCP servers:</strong> MCPs can be powerful but expensive. Disable unused MCPs, enable only required tools, and consider CLI alternatives where available because they can be more token-efficient.</li>
-            </ul>
-            <h4>Testing strategy</h4>
-            <p><strong>Implement → Test → Implement → Test</strong></p>
-            <p>Testing incrementally instead of implementing everything and testing once at the end limits the impact of compound errors and catches problems earlier.</p>
-            <h4>Interesting example shared</h4>
-            <p>The presenters described a case where a user asked Copilot to compare two Excel files directly. Instead, they instructed Copilot to generate a script that compares the files, run the script, and review the output. This completed faster and used fewer tokens because the work shifted into code execution rather than large-scale agent reasoning.</p>
-            <h4>Top 5 actions recommended</h4>
-            <ol>
-              <li>Choose the right model for the task.</li>
-              <li>Use clear, specific prompts.</li>
-              <li>Plan before implementation.</li>
-              <li>Create effective guardrails through instructions and skills.</li>
-              <li>Keep Copilot instruction files concise and focused.</li>
-            </ol>
-            <p><strong>Bottom line:</strong> Successful GitHub Copilot usage is increasingly about <strong>context engineering and workflow design</strong>, not simply picking the smartest model. Teams that provide cleaner context, better prompts, and tighter guardrails will achieve better code quality, lower token usage, and higher ROI.</p>
-          </section>
-          <section class="notes-panel" id="september-8-notes" aria-labelledby="september-8-notes-heading">
-            <h3 id="september-8-notes-heading">September 8 meeting notes</h3>
-            <h4>Discussion</h4>
-            <ul>
-              <li><strong>Token Optimization Strategies in GitHub Copilot:</strong> Ricardo, Kennedy, Al, August, and Thomas discussed various strategies for optimizing token usage in GitHub Copilot, including plan mode, model selection, and practical experiences from refactoring large codebases, with Thomas sharing their team's approach and challenges.
-                <ul>
-                  <li><strong>Plan Mode Versus Agent Mode:</strong> Ricardo explained the benefits of starting sessions in plan mode within GitHub Copilot, which allows for ideation and planning before implementation, potentially reducing token consumption and costs by using less expensive models for planning and more powerful models for execution.</li>
-                  <li><strong>Model Selection and Cost Optimization:</strong> Ricardo highlighted the “auto” model selection feature in GitHub Copilot, which automatically chooses the most appropriate model for a given task, offering a discount and helping users optimize costs by matching model complexity to task requirements.</li>
-                  <li><strong>Refactoring Large Codebases:</strong> Thomas described their team's use of GitHub Copilot and other AI tools to refactor enterprise Java beans and clean up technical debt, noting that while token consumption was high, the process was faster and cheaper than manual rewriting, and sharing challenges with maintaining context across multiple steps.</li>
-                  <li><strong>Managing Context Loss in Multi-Step Tasks:</strong> Thomas and Ricardo discussed issues where Copilot loses context after several steps in a refactoring process, suggesting that breaking tasks into smaller, well-defined chunks may help maintain context and reduce token waste.</li>
-                  <li><strong>Impact Dashboard and ROI Measurement:</strong> Al introduced the impact dashboard, which allows users to input their efforts and receive feedback on the ROI, time savings, and overall impact of using GitHub Copilot, providing a quantitative measure for optimization strategies.</li>
-                </ul>
-              </li>
-              <li><strong>Use Cases and Personas for GitHub Copilot:</strong> Kennedy presented common use cases for GitHub Copilot, such as code completion, documentation, SQL query optimization, and skill learning, encouraging participants to identify their roles and explore new ways to leverage Copilot, with internal examples of automation and skill sharing.
-                <ul>
-                  <li><strong>Common Use Cases:</strong> Kennedy showcased three slides outlining typical use cases for GitHub Copilot, including code completion, documentation generation, SQL query optimization, and learning new skills, emphasizing the versatility of Copilot across different development tasks.</li>
-                  <li><strong>Role-Based Application:</strong> Kennedy encouraged participants to consider their specific roles and how Copilot could be tailored to their needs, suggesting that identifying relevant use cases by persona can help users discover new ways to benefit from the tool.</li>
-                  <li><strong>Internal Automation and Skill Sharing:</strong> Kennedy described how Microsoft teams internally create and share automations and skills, starting from individual contributions and expanding to team-wide repositories, fostering a collaborative environment for skill development and tool integration.</li>
-                </ul>
-              </li>
-              <li><strong>Agentic Coding and GitHub Copilot App Interfaces:</strong> August and Ricardo discussed the evolution of agentic coding in GitHub Copilot, highlighting the standalone app, agent window, and CLI interfaces, and explaining how these tools support orchestration, session management, and outcome-focused workflows for diverse user roles.
-                <ul>
-                  <li><strong>Agent Window and Session Management:</strong> August demonstrated the agent window in GitHub Copilot, which provides a session-based, outcome-focused interface where agents handle coding tasks, allowing users to manage projects, view chats, and configure settings for plugins and skills.</li>
-                  <li><strong>Standalone App Versus IDE Integration:</strong> Ricardo and August compared the GitHub Copilot standalone app with IDE integrations like Visual Studio and VS Code, noting that the app offers a more conversational, agent-first approach, while IDE integrations cater to code-centric workflows.</li>
-                  <li><strong>CLI and Automation Capabilities:</strong> August explained that the CLI interface is favored by platform engineers and those needing automation, while the agent window and app are more suited for outcome-driven tasks, with flexibility to choose based on user comfort and project requirements.</li>
-                  <li><strong>Autopilot Mode and Technical Debt Management:</strong> August described the autopilot mode in the agent window, which enables fully autonomous coding sessions focused on producing pull requests and documentation, aiming to reduce technical debt and streamline future codebase onboarding.</li>
-                </ul>
-              </li>
-              <li><strong>Community Engagement and Future Session Planning:</strong> Ricardo solicited feedback from participants regarding preferred topics and interfaces, encouraged sharing of use cases and challenges, and outlined plans to tailor future sessions and content based on attendee roles and interests, including non-developer participation.
-                <ul>
-                  <li><strong>Feedback and Topic Selection:</strong> Ricardo asked participants to provide feedback on which topics and tools resonate most, inviting suggestions for future session content and offering to organize demos or deep dives based on group interest.</li>
-                  <li><strong>Non-Developer Inclusion:</strong> Ricardo noted the presence of non-developer users in the session, emphasizing the importance of addressing their needs and adapting content to ensure value for a broader audience.</li>
-                </ul>
-              </li>
-              <li><strong>Resource Sharing and Landing Page Updates:</strong> Ricardo and Kennedy discussed the Build Guild landing page as a central resource for session decks, meeting notes, recordings, and related events, with plans to update it regularly and ensure accessibility for all participants.
-                <ul>
-                  <li><strong>Landing Page Content:</strong> Ricardo described the landing page as a one-stop shop for session information, including past and upcoming events, session decks, meeting notes, and links to recordings, aiming to streamline access for attendees.</li>
-                  <li><strong>External Event Promotion:</strong> Ricardo mentioned upcoming external events, such as GitHub Demo Day and token optimization deep dives, and committed to sharing relevant links and resources on the landing page.</li>
-                </ul>
-              </li>
-            </ul>
-          </section>
-        </div>
-      </section>
-
+      <h1>This page has moved</h1>
+      <p>Visit the new OH Build Guild site to continue.</p>
+      <a class="redirect-button" href="https://msftaustin.github.io/OHBuildGuild/">
+        Go to the new site
+      </a>
     </main>
-    <footer>
-      <div class="shell footer-inner"><span><strong>OH Build Guild</strong> · GitHub Copilot community of practice</span><span>Better together. Stronger agents. Greater impact.</span></div>
-    </footer>
-    <script>
-      const filters = document.querySelectorAll(".filter");
-      const grid = document.querySelector("#session-grid");
-      const search = document.querySelector("#session-search");
-      const empty = document.querySelector("#empty-state");
-      let activeFilter = "all";
-      // Guild sessions are the "Session" card type and always lead the grid.
-      function isSessionCard(card) {
-        return card.dataset.type === "session" || card.dataset.origin === "guild";
-      }
-      function cardTime(card) {
-        const value = Date.parse(card.dataset.date || "");
-        return Number.isNaN(value) ? -Infinity : value;
-      }
-      function sortSessions() {
-        const ordered = Array.from(grid.querySelectorAll(".session-card")).sort((a, b) => {
-          const sessionDiff = Number(isSessionCard(b)) - Number(isSessionCard(a));
-          if (sessionDiff) return sessionDiff;
-          return isSessionCard(a) ? cardTime(b) - cardTime(a) : cardTime(a) - cardTime(b);
-        });
-        ordered.forEach((card) => grid.appendChild(card));
-        return ordered;
-      }
-      const cards = sortSessions();
-      function renderSessions() {
-        const term = search.value.trim().toLowerCase();
-        let visible = 0;
-        cards.forEach((card) => {
-          const matchesFilter =
-            activeFilter === "all" ||
-            card.dataset.type === activeFilter ||
-            card.dataset.origin === activeFilter;
-          const matchesSearch = !term || card.dataset.search.includes(term);
-          const show = matchesFilter && matchesSearch;
-          card.hidden = !show;
-          if (show) visible += 1;
-        });
-        empty.classList.toggle("show", visible === 0);
-      }
-      filters.forEach((filter) => filter.addEventListener("click", () => {
-        activeFilter = filter.dataset.filter;
-        filters.forEach((item) => item.classList.toggle("active", item === filter));
-        renderSessions();
-      }));
-      search.addEventListener("input", renderSessions);
-      document.querySelectorAll(".notes-link").forEach((link) => link.addEventListener("click", (event) => {
-        event.preventDefault();
-        link.textContent = "Notes coming soon";
-        link.style.color = "var(--cp-text-muted)";
-      }));
-      document.querySelector("#theme-toggle").addEventListener("click", () => {
-        const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-        document.documentElement.dataset.theme = next;
-      });
-    </script>
   </body>
 </html>
